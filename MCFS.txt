@@ -1,0 +1,5 @@
+MCFS 
+
+NTFS uses 4 KB sectors which means it writes 4 KB at a time which is too harsh on eMMC so MCFS will use 1 KB bursts instead pf 4 KB if my information is incorrect olease tell me through the repo
+
+
