@@ -1,3 +1,67 @@
-I request public help on the CHRONOS11 project 
-You have my legal permission to edit any files as stated within the GNU General Public License
-My goal is simple: get a Windows distro that is compatible and runs smoothly on Chromebooks equipped with MrChromebox firmware.
+# Call for Contributors – ChrondOS11
+
+I’m opening ChrondOS11 to public collaboration under the GNU General Public License.
+
+You have my permission, as allowed by the GPL, to edit, improve, and extend any files in this repository. Please submit changes through pull requests so we can review and grow this project together.
+
+---
+
+## Project goal
+
+Create a Windows-based distribution that:
+
+- runs smoothly on Chromebooks equipped with MrChromebox firmware  
+- is as compatible as possible with Chromebook hardware  
+- is optimized for low-end storage like eMMC
+
+The two main starting points:
+
+1. Reduce bloat and overall footprint.
+2. Add and tune drivers specifically for Chromebook hardware.
+
+---
+
+## About me
+
+I’m a high school student with a clear idea but limited ability to execute it alone.  
+I’ll be focusing on research, design, and coordination, and I’m asking the wider community to help turn this idea into working code.
+
+*Date: April 16, 2026*
+
+---
+
+## eMMC and the MCFS concept
+
+NTFS is known to behave poorly on cheap eMMC storage—frequent random writes, stalls, and a tendency to corrupt or become unbootable on low-end devices.
+
+Long-term, I’d like to explore a new eMMC-friendly filesystem concept:
+
+### MCFS (MC FileSystem)
+
+MCFS is envisioned as an NTFS-like, garbage-collected filesystem concept that:
+
+- reads and writes in fast, controlled chunks  
+- spreads writes out to avoid hammering the same eMMC cells  
+- is more forgiving of inconsistency and power loss  
+- aims to prevent the “boots twice then corrupts” pattern seen on some devices
+
+This is a **research and design goal**, not a near-term promise. I will not set deadlines for MCFS; my hope is that, over time, interested filesystem and OS developers can help turn this idea into reality.
+
+---
+
+## How you can help
+
+I’m looking for contributors who can help with:
+
+- Windows driver research for Chromebook hardware  
+- PowerShell scripting and automation  
+- Service and bloat reduction for Windows on low-end devices  
+- eMMC performance and reliability tuning  
+- Filesystem and storage design (for the MCFS concept)  
+- Documentation, testing, and experimentation
+
+If any part of this vision interests you, I’d be grateful for your ideas, issues, and pull requests.
+
+*Signed,*  
+A student with an idea, hoping the community can help turn it into code.  
+*April 16, 2026*
