@@ -1,0 +1,3 @@
+I request public help on the CHRONOS11 project 
+You have my legal permission to edit any files as stated within the GNU General Public License
+My goal is simple: get a Windows distro that is compatible and runs smoothly on Chromebooks equipped with MrChromebox firmware.
