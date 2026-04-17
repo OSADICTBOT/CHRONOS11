@@ -1,11 +1,54 @@
-# CHRONOS11
-  the idea is Microsoft windows compatible with chromebook hardware
+# ChrondOS11 – Windows on Chromebook Hardware
 
+The idea behind ChrondOS11 is simple:
 
-plan is an MMC filesystem tuned for eMMC so that it can actually work good without self destructing 
+> Make Microsoft Windows run as smoothly and reliably as possible on Chromebooks with MrChromebox firmware.
 
-its called MCFS and is an edited version of NTFS 
+This involves two main challenges:
 
-it will be tuned to keep eMMC stable by spreading bursts of read/writes into more spread even and consistent read/writes
+- **Hardware compatibility** – getting Windows to work properly with Chromebook hardware  
+- **Storage reliability** – making Windows behave well on low-end eMMC storage
 
-As many know windows can only boot in ntfs so if we can have the bootloader load MCFS drivers then it can boot into MCFS but as we know we do not have MCFS drivers yet as of april 16 2026.
+---
+
+## MCFS – eMMC-Tuned Filesystem Concept
+
+Many Chromebooks use cheap eMMC storage, and NTFS is not designed with this in mind. It can cause heavy, bursty read/write patterns that wear out eMMC quickly or lead to corruption.
+
+To address this, ChrondOS11 explores a filesystem concept called **MCFS (MC FileSystem)**.
+
+### What MCFS aims to be
+
+MCFS is envisioned as an NTFS-like, eMMC-aware filesystem that:
+
+- spreads out writes instead of hammering the same cells  
+- turns short, intense I/O bursts into more even, consistent access  
+- is more forgiving on low-end eMMC devices  
+- reduces the risk of “self-destructing” installs after only a few boots  
+
+Right now, MCFS is a **design and research idea**, not an implemented filesystem.
+
+---
+
+## Boot Concept
+
+Windows normally only boots from NTFS.  
+The long-term idea is:
+
+- Use a small **NTFS boot partition**  
+- Have the bootloader load **MCFS drivers**  
+- Then mount and run Windows from an **MCFS main partition**
+
+As of April 16, 2026, **MCFS drivers do not exist**.  
+This is a future goal for contributors with filesystem and driver experience.
+
+---
+
+## Status
+
+- Concept: defined at a high level  
+- Filesystem: not implemented  
+- Drivers: not implemented  
+- Research and design: in progress  
+
+If you’re interested in storage, filesystems, Windows internals, or Chromebook hardware, contributions and ideas are welcome.
